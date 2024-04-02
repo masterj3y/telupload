@@ -1,0 +1,19 @@
+name: "Telegram Upload File"
+descrioption: "Upload a file to Telegram"
+inputs:
+  telegram-bot-token: 
+    description: "Telegram bot token"
+    required: true
+  telegram-user-id:
+    description: "ID of the user the file should send to"
+    required: true
+  file-path:
+    description: "File path to upload"
+    required: true
+runs:
+  using: 'docker'  
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.telegram-bot-token }}
+    - ${{ inputs.telegram-user-id }}
+    - ${{ inputs.file-path }}
