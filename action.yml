@@ -14,6 +14,6 @@ runs:
   using: 'docker'  
   image: 'Dockerfile'
   args:
-    - ${{ inputs.telegram-bot-token }}
-    - ${{ inputs.telegram-user-id }}
-    - ${{ inputs.file-path }}
+    - "-t ${{ inputs.telegram-bot-token }}"
+    - "-u ${{ inputs.telegram-user-id }}"
+    - "-f ${{ inputs.file-path }}"
